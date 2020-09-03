@@ -17,35 +17,28 @@ namespace _09_03
         int [] vx = new  int[100];
         int [] vy = new int[100];
         Label[] labels = new Label[100];
-       
+        
        
         public Form1()
         {
             InitializeComponent();
 
-
+          
             for (int i = 0; i< 100; i++)
             {
                 vx[i] = rand.Next(-20, 21);
                 vy[i] = rand.Next(-20, 21);
+
+                labels[0] = new Label();
+                labels[0].AutoSize = true;
+                labels[0].Text = "★";
+                Controls.Add(labels[i]);
+
+                labels[i].Left = rand.Next(ClientSize.Width - labels[i].Width);
+                labels[i].Top = rand.Next(ClientSize.Width - labels[i].Width);
             }
 
-            labels[0] = new Label();
-            labels[0].AutoSize = true;
-            labels[0].Text = "★" ;
-            Controls.Add(labels[0]);
-
-            labels[i].Left = rand.Next(ClientSize.Width - label1.Width);
-            labels[i].Top = rand.Next(ClientSize.Width - label1.Width);
-
-            label1.Left = rand.Next(ClientSize.Width - label1.Width);
-            label1.Top = rand.Next(ClientSize.Height - label1.Height);
-
-            label2.Left = rand.Next(ClientSize.Width - label2.Width);
-            label2.Top = rand.Next(ClientSize.Height - label2.Height);
-
-            label3.Left = rand.Next(ClientSize.Width - label3.Width);
-            label3.Top = rand.Next(ClientSize.Height - label3.Height);
+           
         }
 
         private void label1_Click(object sender, EventArgs e)

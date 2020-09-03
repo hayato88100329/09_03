@@ -14,8 +14,8 @@ namespace _09_03
     {
         static Random rand = new Random();
 
-        int [] vx = new  int[3];
-        int [] vy = new int[3];
+        int [] vx = new  int[100];
+        int [] vy = new int[100];
         Label[] labels = new Label[100];
        
        
@@ -24,7 +24,7 @@ namespace _09_03
             InitializeComponent();
 
 
-            for (int i = 0; i< 3; i++)
+            for (int i = 0; i< 100; i++)
             {
                 vx[i] = rand.Next(-20, 21);
                 vy[i] = rand.Next(-20, 21);
@@ -35,6 +35,8 @@ namespace _09_03
             labels[0].Text = "★" ;
             Controls.Add(labels[0]);
 
+            labels[i].Left = rand.Next(ClientSize.Width - label1.Width);
+            labels[i].Top = rand.Next(ClientSize.Width - label1.Width);
 
             label1.Left = rand.Next(ClientSize.Width - label1.Width);
             label1.Top = rand.Next(ClientSize.Height - label1.Height);
